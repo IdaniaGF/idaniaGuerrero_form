@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(reset.css);
+@import url(variables.css);
+@import url(base.css);
+
+.title{
+  font-size: 1.625rem;
+  font-weight: 800; 
+  color: var(--dark-aqua)
+}
+
+.form-info{
+  margin: 0 1rem;
+}
+
+.form{
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 50%;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.input-container{
+  position: relative; 
+  margin: 0.5rem 7%; 
+  padding-bottom: 1rem; 
+  text-align: left;
+}
+
+.input{
+  width: 100%;
+  padding: 1.5rem 0 0.25rem 0;
+  background: linear-gradient(0.25turn, var(--green), var(--dark-aqua)) 0% 100% / 0% 2px no-repeat;
+  transition: background-size 0.5s;
+  border-bottom: var(--green) solid 1px;
+}
+
+.input--select{
+  width: fit-content;
+}
+
+.input::placeholder{
+  visibility: hidden; 
+}
+
+.input-label{
+  position: absolute; 
+  top: 1.5rem; 
+  left: 0; 
+  transition: all 0.3s; 
+}
+
+.input:not(:placeholder-shown) + .input-label, .input:focus + .input-label{
+  top: 0.5rem; 
+  font-size: 0.875rem; 
+  color: var(--dark-aqua); 
+}
+
+.input:focus{
+  background-size: 100% 2px;
+}
+
+.input-container--invalid{
+  padding-bottom: 0; 
+}
+
+.input-container--invalid .input{
+  border-bottom: var(--error) solid 1px;
+}
+
+.input-container--invalid .error, .input-container--invalid .input-label,.input-container--invalid .input:not(:placeholder-shown) + .input-label {
+  color: var(--error);
+}
+
+.error{
+  font-size: 0.8rem; 
+  color: var(--error);
+}
+
+.input--img{
+  width: 85%;
+}
+
+.input--folder{
+  width: 10%;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .input-container{
+      margin: 0.5rem 10%; 
+  }
+}
